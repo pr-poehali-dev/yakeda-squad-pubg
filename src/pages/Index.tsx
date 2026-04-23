@@ -23,12 +23,12 @@ const generatePlayers = () => {
     "HoldLine", "SmokeScreen", "FlashBang", "Molotov", "GrenadeKing",
     "DefuseKing", "PlantMaster", "SpikeBomb", "OverWatch", "HighGround",
     "BootCamp", "ProLeague", "EliteTeam", "TopTier", "HighElo",
-    "MEOW_PL", "RankGrind", "SoloQueue", "DuoStack", "TrioForce",
+    "MEOW_PL", "RankGrind", "SoloQueue", "DuoStack", "Yakeda_Squad",
   ];
 
   return names.map((name, i) => ({
     rank: i + 1,
-    name: i + 1 === MY_RANK ? "ВЫ" : name,
+    name: i + 1 === MY_RANK ? "Yakeda_Squad" : name,
     isMe: i + 1 === MY_RANK,
     score: Math.round(18500 - i * 180 - Math.random() * 60),
     kd: parseFloat((3.8 - i * 0.03 + Math.random() * 0.15).toFixed(2)),
@@ -183,6 +183,22 @@ export default function Index() {
             willChange: "transform, opacity",
           }}
         >
+          {/* Logo */}
+          <div className="flex items-center gap-4 mb-8">
+            <img
+              src="https://cdn.poehali.dev/projects/f0d2a78b-651c-4f48-a801-fc4a589d0970/files/7cd759dd-6527-488b-9d69-b5bc75d32c6c.jpg"
+              alt="Yakeda Squad"
+              className="w-14 h-14 rounded-xl object-cover border border-border/60"
+              style={{ imageRendering: "crisp-edges" }}
+            />
+            <div>
+              <div className="text-lg font-bold text-foreground tracking-widest uppercase" style={{ fontFamily: "'Space Mono', monospace", letterSpacing: "0.12em" }}>
+                Yakeda Squad
+              </div>
+              <div className="text-xs text-muted-foreground tracking-widest uppercase mt-0.5">PUBG Mobile</div>
+            </div>
+          </div>
+
           <div className="flex items-center gap-3 mb-1">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs text-muted-foreground uppercase tracking-widest rank-badge">Live</span>
